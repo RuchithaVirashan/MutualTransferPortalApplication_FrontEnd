@@ -52,7 +52,7 @@ function App() {
 
   const logout = () => {
     setCurrUser({});
-    localStorage.removeItem("currUser");
+    window.localStorage.removeItem("currUser");
   };
 
   return (

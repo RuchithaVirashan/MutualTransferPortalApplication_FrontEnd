@@ -14,8 +14,8 @@ const Navbar = () => {
         <div className="relative flex items-center justify-between">
         <Link
           to="/"
-          aria-label="Company"
-          title="Company"
+          aria-label="Home"
+          title="Home"
           className="inline-flex items-center"
         >
           <svg
@@ -34,37 +34,37 @@ const Navbar = () => {
             <rect x="14" y="11" width="7" height="12" />
           </svg>
           <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-            Get-A-Job
+            Mutual_Transfer_portal
           </span>
         </Link>
         <ul class="flex items-center hidden space-x-8 lg:flex">
           <li>
           <Link
               to="/posts"
-              aria-label="Our product"
-              title="Our product"
+              aria-label="Find transfer"
+              title="Find transfer"
               className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
             >
-              Companies
+              Find transfer
             </Link>
           </li>
           {currUser.username && (
               <>
                 <li>
                   <Link
-                    to="/jobs"
-                    aria-label="Our product"
-                    title="Our product"
+                    to="/missing"
+                    aria-label="Post Now"
+                    title="Post Now"
                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                   >
-                    Jobs
+                    Post Now
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/profile"
-                    aria-label="Product pricing"
-                    title="Product pricing"
+                    aria-label="Profile"
+                    title="Profile"
                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                   >
                     Profile
@@ -115,8 +115,8 @@ const Navbar = () => {
                   <div>
                     <Link
                       to="/posts"
-                      aria-label="Company"
-                      title="Company"
+                      aria-label="Find transfer"
+                      title="Find transfer"
                       className="inline-flex items-center"
                     >
                       <svg
@@ -135,7 +135,7 @@ const Navbar = () => {
                         <rect x="14" y="11" width="7" height="12" />
                       </svg>
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        Companies
+                        Find transfer
                       </span>
                     </Link>
                   </div>
@@ -159,29 +159,29 @@ const Navbar = () => {
                   <ul className="space-y-4">
                     <li>
                     <Link
-                        to="/jobs"
-                        aria-label="jobs"
-                        title="jobs"
+                        to="/missing"
+                        aria-label="Post Now"
+                        title="Post Now"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Jobs
+                        Post Now
                       </Link>
                     </li>
                     <li>
                       <Link
-                        to="/companies"
-                        aria-label="Our product"
-                        title="Our product"
+                        to="/posts"
+                        aria-label="Find transfer"
+                        title="Find transfer"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Companies
+                        Find transfer
                       </Link>
                     </li>
                     <li>
                       <Link
                         to="/profile"
-                        aria-label="Our product"
-                        title="Our product"
+                        aria-label="Profile"
+                        title="Profile"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Profile

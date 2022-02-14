@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowRight } from "phosphor-react";
 
 export const Home = () => {
   return (
@@ -14,42 +15,45 @@ export const Home = () => {
         </svg>
         <img
           className="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
-          src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+          src="https://media.istockphoto.com/photos/business-network-concept-customer-support-shaking-hands-picture-id1256603011?k=20&m=1256603011&s=170667a&w=0&h=gUmPgdbDmah4yhD9HeIPqdXIk_cpwdSovpnIqwqgz3I=&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
           alt=""
         />
       </div>
       <div className="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
         <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
           <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-            Take the plunge
+            Take the chance
           </p>
           <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-            Getting a job
+            Making a transfer 
             <br className="hidden md:block" />
-            has never been 
+            has never been 
             <span className="inline-block text-deep-purple-accent-400">
               easier
             </span>
           </h2>
           <p className="pr-5 mb-5 text-base text-gray-700 md:text-lg">
-            Are you poor and bored? Tired of sitting on your couch? Exhausted
-            from pondering the nature of your meaningless existence? Browse our
-            collection of 1000+ job listings and make sure your dream job
-            doesn't pass you by
+          Are you a government employee? Tired of finding a place to make a transfer? Exhausted 
+          from working far away from home? Browse our collection of 1000+ transfer request listings 
+          and make sure your dream place doesn't pass you by
           </p>
           <div className="flex items-center">
+            { (
+              <a
+                href="/login"
+                className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+              >
+                Get started
+              </a>
+            )}
+
             <a
-              href="/login"
-              className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-            >
-              Get started
-            </a>
-            <a
-              href="/companies"
+              href=""
               aria-label=""
               className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
             >
-              View all companies
+              View about us 
+              <ArrowRight size={34} />
             </a>
           </div>
         </div>
