@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import AuthContext from "./Auth/authContext";
 import { ArrowRight } from "phosphor-react";
 
 export const Home = () => {
+  const { currUser } = useContext(AuthContext);
   return (
     <div className="h-auto relative flex flex-col-reverse py-16 lg:pt-16 lg:flex-col lg:pb-0">
       <div className="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
@@ -38,7 +40,7 @@ export const Home = () => {
           and make sure your dream place doesn't pass you by
           </p>
           <div className="flex items-center">
-            { (
+          {currUser.username ? null : (
               <a
                 href="/login"
                 className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
@@ -48,11 +50,11 @@ export const Home = () => {
             )}
 
             <a
-              href=""
+              href="/posts"
               aria-label=""
               className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
             >
-              View about us 
+              View all requests 
               <ArrowRight size={34} />
             </a>
           </div>

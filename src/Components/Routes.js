@@ -8,6 +8,7 @@ import Post from "./Posts/Post";
 import Posts from "./Posts/Posts";
 import Logout from "./Auth/Logout";
 import ProtectedRoute from "./Auth/ProtectedRoute";
+import MissingPage from "../MissingPage";
 
 const Routes = () => {
   return (
@@ -32,6 +33,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/logout">
         <Logout />
+      </Route>
+      <Route exact path="/missing">
+        <MissingPage />
       </Route>
       <Redirect to="/" />
     </Switch>

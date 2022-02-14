@@ -8,8 +8,10 @@ class Api {
 
   static async request(endpoint, data = {}, method = "get") {
         console.debug("API Call:", "endpoint: ", endpoint, "data: ", data, method);
+
+        const token = window.localStorage.getItem("token");
         const url = `${BASE_URL}/${endpoint}`;
-        const headers = { Authorization: `Bearer ` +  Api.token };
+        const headers = { Authorization: `Bearer ` +  token };
         const params = method === "get" ? data : {};
         try {
           return (await axios({ url, method, data, params, headers })).data;
@@ -48,11 +50,17 @@ class Api {
     /* get user -- for now, will only work for testuser until tokens implemented */
 
     static async getUser(username) {
-      
+      //console.log("I've been told to get a user");
       let res = await this.request(`user/${username}`);
-      // console.log(res);
+      //console.log("this is the result: ",res);
       return res;
     }
+  
+    // static async addpost( data) {
+    //   console.log("API CLASS IS NOW GONNA SEND REQUEST");
+    //   let res = await this.request(`post`, data, "put");
+    //   return res;
+    // }
 }
 
 // for now, token ("testuser" / "password")

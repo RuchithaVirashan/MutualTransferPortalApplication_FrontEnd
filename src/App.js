@@ -14,12 +14,16 @@ function App() {
     return user !== null ? JSON.parse(user) : {};
   });
   const [token, setToken] = useState("");
-  console.log(currUser);
   const [username, setUsername] = useState("");
 
   useEffect(() => {
         //set current token
-        Api.token = token;
+        // Api.token = token;
+
+        if (!token) {
+          return;
+        }
+        window.localStorage.setItem("token", token);
 
         //retrieve current user based on current token and username
         //save currUser to local storage
@@ -28,12 +32,15 @@ function App() {
           const user = await Api.getUser(username);
           //console.log("User check", user);
           setCurrUser(user);
-          console.log(currUser.username);
+          // console.log(user.username);
+          // console.log("new user gettin called",currUser);
           window.localStorage.setItem("currUser", JSON.stringify(user));
+          console.log("is APP's USE EFFECT gettin called?");
     };
+    // console.log("is this gettin called?");
     getUser();
     return () => {};
-  }, [token]);
+  }, [token, username]);
 
   const register = async (formData) => {
     const res = await Api.register(formData);

@@ -1,11 +1,20 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import Api from "../../Api";
 import AuthContext from "../Auth/authContext";
 
 const UserDetailsForm = () => {
   const { currUser } = useContext(AuthContext);
   const [formData, setFormData] = useState();
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    try {
+      Api.edit(currUser.username, formData);
+    } catch (e) {
+      console.log("CAUGHT ERROR", e);
+    }
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((formData) => ({
@@ -16,22 +25,12 @@ const UserDetailsForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h3 className="font-mono font-bold text-center mb-5 text-l">
+        Edit User Information
+      </h3>
+
       <div className="mb-1 sm:mb-2">
-        <label htmlFor="username" className="inline-block mb-1 font-medium">
-          Username
-        </label>
-        <input
-          placeholder={currUser.username}
-          required
-          type="text"
-          className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-          id="username"
-          name="username"
-          onChange={handleChange}
-        />
-      </div>
-      <div className="mb-1 sm:mb-2">
-        <label htmlFor="username" className="inline-block mb-1 font-medium">
+        <label htmlFor="email" className="inline-block mb-1 font-medium">
           Email
         </label>
         <input
@@ -39,8 +38,8 @@ const UserDetailsForm = () => {
           required
           type="text"
           className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-          id="username"
-          name="username"
+          id="email"
+          name="email"
           onChange={handleChange}
         />
       </div>
