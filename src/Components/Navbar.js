@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AuthContext from "./Auth/authContext";
 import LoginButton from "./Auth/LoginButton";
 import LogoutButton from "./Auth/LogoutButton";
+import LogoSVG from "./LogoSVG";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,21 +19,8 @@ const Navbar = () => {
           title="Home"
           className="inline-flex items-center"
         >
-          <svg
-            className="w-8 text-teal-accent-400"
-            viewBox="0 0 24 24"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeMiterlimit="10"
-            stroke="currentColor"
-            fill="none"
-          >
-            <rect x="3" y="1" width="7" height="12" />
-            <rect x="3" y="17" width="7" height="6" />
-            <rect x="14" y="1" width="7" height="6" />
-            <rect x="14" y="11" width="7" height="12" />
-          </svg>
+        <LogoSVG />
+  
           <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
             Mutual_Transfer_portal
           </span>
@@ -119,21 +107,7 @@ const Navbar = () => {
                       title="Find transfer"
                       className="inline-flex items-center"
                     >
-                      <svg
-                        className="w-8 text-deep-purple-accent-400"
-                        viewBox="0 0 24 24"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeMiterlimit="10"
-                        stroke="currentColor"
-                        fill="none"
-                      >
-                        <rect x="3" y="1" width="7" height="12" />
-                        <rect x="3" y="17" width="7" height="6" />
-                        <rect x="14" y="1" width="7" height="6" />
-                        <rect x="14" y="11" width="7" height="12" />
-                      </svg>
+                      <LogoSVG />
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                         Find transfer
                       </span>

@@ -6,6 +6,15 @@ import Footer from "./Components/Footer";
 import Api from "./Api";
 import { useEffect, useState } from "react";
 import AuthContext from "./Components/Auth/authContext";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import {
+  faCheckSquare,
+  faCoffee,
+  faSpinner,
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(fab, faSpinner, faCheckSquare, faCoffee);
 
 function App() {
   //looks for user in localStorage, if not found, user is empty obj
