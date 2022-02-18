@@ -2,7 +2,7 @@ import React from "react";
 
 const CircleSVG = () => {
   return (
-    <div className="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
+    <div className="z-0 absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
       <svg
         viewBox="0 0 88 88"
         className="w-full max-w-screen-xl text-indigo-100"

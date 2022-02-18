@@ -7,7 +7,7 @@ class Api {
   static token;
 
   static async request(endpoint, data = {}, method = "get") {
-        console.debug("API Call:", "endpoint: ", endpoint, "data: ", data, method);
+        //console.debug("API Call:", "endpoint: ", endpoint, "data: ", data, method);
 
         const token = window.localStorage.getItem("token");
         const url = `${BASE_URL}/${endpoint}`;
@@ -47,7 +47,7 @@ class Api {
     return res.token;
   }
 
-    /* get user -- for now, will only work for testuser until tokens implemented */
+    /* get user */
 
     static async getUser(username) {
       //console.log("I've been told to get a user");

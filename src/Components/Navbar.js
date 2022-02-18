@@ -1,5 +1,6 @@
 import { UserPlus } from "phosphor-react";
 import React, { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
 import AuthContext from "./Auth/authContext";
 import LoginButton from "./Auth/LoginButton";
 import LogoutButton from "./Auth/LogoutButton";
@@ -14,7 +15,7 @@ const Navbar = () => {
     <div className="bg-gray-900 Navbar">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
-        <a
+        <NavLink
           exact
           to="/"
           aria-label="Home"
@@ -26,54 +27,54 @@ const Navbar = () => {
           <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
             Mutual_Transfer_portal
           </span>
-        </a>
+        </NavLink>
         <ul class="flex items-center hidden space-x-8 lg:flex">
           <li>
-          <a
+          <NavLink
               to="/posts"
               aria-label="Find transfer"
               title="Find transfer"
               className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Find transfer
-            </a>
+            </NavLink>
           </li>
           {currUser.username && (
               <>
                 <li>
-                  <a
+                  <NavLink
                     to="/missing"
                     aria-label="Post Now"
                     title="Post Now"
                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
                   >
                     Post Now
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
+                  <NavLink
                     to="/profile"
                     aria-label="Profile"
                     title="Profile"
                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
                   >
                     Profile
-                  </a>
+                  </NavLink>
                 </li>
               </>
             )}
             {currUser.username ? <LogoutButton /> : <LoginButton />}
             {currUser.username ? null : (
               <li>
-                <a
-                  href="/signup"
+                <NavLink
+                  to="/signup"
                   className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                   aria-label="Sign up"
                   title="Sign up"
                 >
                   Sign up 
                   <UserPlus size={23} />
-                </a>
+                </NavLink>
               </li>
             )}
         </ul>
@@ -82,7 +83,7 @@ const Navbar = () => {
             aria-label="Open Menu"
             title="Open Menu"
             class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
-            onClick={() => setIsMenuOpen(true)}
+            onClick={() => setIsMenuOpen((currVal) => !currVal)}
           >
             <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
               <path
@@ -104,7 +105,7 @@ const Navbar = () => {
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <a
+                    <NavLink
                       to="/posts"
                       aria-label="Find transfer"
                       title="Find transfer"
@@ -114,7 +115,7 @@ const Navbar = () => {
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                         Find transfer
                       </span>
-                    </a>
+                    </NavLink>
                   </div>
                   <div>
                     <button
@@ -135,34 +136,34 @@ const Navbar = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                    <a
+                    <NavLink
                         to="/missing"
                         aria-label="Post Now"
                         title="Post Now"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Post Now
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a
+                      <NavLink
                         to="/posts"
                         aria-label="Find transfer"
                         title="Find transfer"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Find transfer
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a
+                      <NavLink
                         to="/profile"
                         aria-label="Profile"
                         title="Profile"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Profile
-                      </a>
+                      </NavLink>
                     </li>
                     {currUser.username ? (
                         <LogoutButton smallScreen />
@@ -171,15 +172,15 @@ const Navbar = () => {
                       )}
                       {currUser.username ? null : (
                         <li>
-                          <a
-                            href="/signup"
+                          <NavLink
+                            to="/signup"
                             className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                             aria-label="Sign up"
                             title="Sign up"
                           >
                             Sign up 
                             <UserPlus size={23} />
-                          </a>
+                          </NavLink>
                         </li>
                       )}
                   </ul>

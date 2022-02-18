@@ -1,38 +1,50 @@
 import React, { useContext, useEffect, useState } from 'react';
 import PostCard from './PostCard';
 import Header from '../Header';
-import CircleSVG from './CircleSVG';
 import FilterForm from './FilterForm';
 import { v4 as uuid } from 'uuid';
 import Api from '../../Api';
 import AuthContext from '../Auth/authContext';
 import ProtectedRoute from '../Auth/ProtectedRoute';
-import { useHistory } from 'react-router-dom';
+import { Spinner } from 'phosphor-react';
+
 
 const Posts = () => {
 
     const[posts, getPosts]=useState([]);
     const [filterCriteria, setFilterCriteria] = useState({});
     const { currUser } = useContext(AuthContext);
-    const history = useHistory();
+    const [isLoading, setIsLoading] = useState(false);
+    const [hasNoMatch, setHasNoMatch] = useState(false);
+    const [errorMsgs, setErrorMsgs] = useState([]);
     // console.log("rendering posts page, ", currUser);
 
-//     //Retreve Post
-//     const retrievePosts =async () =>{
-//     const response = await api.get("/post");
-//     return response.data;
-//   };
 
     //effect to filter posts based on search criteria
     useEffect(()=> {
         const setposts = async (criteria) =>{
-            try {
-            const res = await Api.setposts(criteria);
+        try {
+          setErrorMsgs([]);  
+          setIsLoading(true);
+          setHasNoMatch(false);
+            //remove empty strings from criteria, which would otherwise throw server error
+            const cleanedCriteria = {};
+            for (const property in criteria) {
+              if (criteria[property] != "") {
+                cleanedCriteria[property] = criteria[property];
+              }
+            }
+            const res = await Api.setposts(cleanedCriteria);
+            if (res.length === 0) {
+              setHasNoMatch(true);
+            }
             // console.log(res);
             // console.log(typeof(res));
             getPosts(res);
+            setIsLoading(false);
         } catch (e) {
-            history.push("/request-error");
+          setErrorMsgs(e);
+          setIsLoading(false);
           }
         };
     
@@ -52,14 +64,28 @@ const Posts = () => {
     {currUser.username ? (
     <div className="bg-gray-100">
             <Header
-            title="Currently Recruiting"
+            title="All Transfer Request"
             category="posts"
-            description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae."
+            description="Browse through all listed posts below. See something you like?"
             />
         <div className="relative px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-0 lg:pb-20">
-            <CircleSVG />
+            {/* <CircleSVG /> */}
             <FilterForm addFilterCriteria={addFilterCriteria} />
+            {isLoading && (
+              <div className="font-xl font-mono text-center">
+                <Spinner />
+              </div>
+            )}
+            {hasNoMatch && (
+              <div className="text-center font-mono">
+                Oops! Your search didn't return any matches.
+              </div>
+            )}
+            {errorMsgs.length > 0 && (
+              <div className="text-center font-mono text-red-400 pb-10">
+                Ooops, you entered an invalid search term! Try again.{" "}
+              </div>
+            )}
             <div className="relative grid gap-5 grid-cols-1 sm:grid-cols-2">
               {posts.map((j) => (
                 <PostCard post={j} key={uuid()} />

@@ -4,6 +4,7 @@ import AuthContext from "./authContext";
 import AuthSVG from "./AuthSVG";
 import Spinner from "../FormComponents/Spinner";
 import SuccessAlert from "../FormComponents/SuccessAlert";
+import FormErrorHandler from "../FormComponents/FormErrorHandler";
 
 const Signup = () => {
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -20,6 +21,7 @@ const Signup = () => {
   const [submitting, setSubmitting] = useState(false);
   const [displaySuccess, setDisplaySuccess] = useState(false);
   const history = useHistory();
+  const [errorMsgs, setErrorMsgs] = useState([]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,32 +31,12 @@ const Signup = () => {
     }));
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     register(formData);
-  //     setFormData(initialState);
-  //     setSubmitting(true);
-
-  //     setTimeout(() => {
-  //       setSubmitting(false);
-  //       setDisplaySuccess(true);
-  //     }, 2000);
-
-  //     setTimeout(() => {
-  //       history.push("/login");
-  //     }, 6000);
-  //   } catch (e) {
-  //     console.log("CAUGHT ERROR", e);
-  //   }
-  //   //setHasSubmitted(true);
-  // };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const tryToRegister = async (formData) => {
       try {
+        setErrorMsgs([]);
         await register(formData);
         setFormData(initialState);
         setSubmitting(true);
@@ -66,10 +48,9 @@ const Signup = () => {
 
         setTimeout(() => {
           history.push("/login");
-        }, 6000);
+        }, 5000);
       } catch (e) {
-        console.log("CAUGHT ERROR", e);
-        history.push("/request-error");
+        setErrorMsgs(e);
       }
     };
 
@@ -209,6 +190,7 @@ const Signup = () => {
                       </div>
                   </div>
                 </div>
+                <FormErrorHandler errorMsgs={errorMsgs} />
                 <div className="flex -mx-3">
                   <div className="w-full px-3 mb-5">
                     <button className="block w-full transition duration-200 max-w-xs mx-auto bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
@@ -224,21 +206,11 @@ const Signup = () => {
                 </form>{" "}
                 {displaySuccess && (
                 <>
-                  <SuccessAlert msg="Rejoice! You're about to be redirected to the login page." />
-                  <Spinner />
-                </>
-              )}
-              {hasSubmitted && (
-                <>
-                  <div>Success!</div>
-                  <div>
-                    You can now{" "}
-                    <Link
-                      className="bg-deep-purple-accent-400 text-white hover:bg-deep-purple-accent-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
-                      to="/login"
-                    >
-                      LOGIN
-                    </Link>
+                  <div className="text-center">
+                    <SuccessAlert
+                      spinner
+                      msg="Rejoice! You're about to be redirected to the login page."
+                    />
                   </div>
                 </>
               )}

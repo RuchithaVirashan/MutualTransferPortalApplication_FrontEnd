@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import AuthContext from "./authContext";
 import AuthSVG from "./AuthSVG";
 import { Link, Redirect, useHistory } from "react-router-dom";
+import FormErrorHandler from "../FormComponents/FormErrorHandler";
+import Spinner from "../FormComponents/Spinner";
 
 const Login = () => {
   const initialState = {
@@ -12,6 +14,8 @@ const Login = () => {
   const [formData, setFormData] = useState(initialState);
   const { login, currUser } = useContext(AuthContext);
   const history = useHistory();
+  const [errorMsgs, setErrorMsgs] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,17 +25,25 @@ const Login = () => {
     }));
   };
 
+  const handleSignupClick = (e) => {
+    e.preventDefault();
+    history.push("/signup");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const tryToLogin = async (formData) => {
       try {
+        setIsLoading(true);
+        setErrorMsgs([]);
         await login(formData);
         setFormData(initialState);
+        setIsLoading(false);
         setTimeout(() => {
           history.push("/home");
         }, 1000);
       } catch (e) {
-        history.push("/request-error");
+        setErrorMsgs(e);
       }
     };
 
@@ -116,25 +128,26 @@ const Login = () => {
                         onChange={handleChange}
                       />
                     </div>
+                    <FormErrorHandler errorMsgs={errorMsgs} />
                     <div className="mt-4 mb-8 sm:mb-8">
                       <button
                         type="submit"
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                       >
-                        Login
+                        Login   {isLoading ? <Spinner /> : null}
                       </button>
                     </div>
                     <p className="text-xs text-gray-600 sm:text-sm">
                       No account yet? Sign up below.
                     </p>
                     <div className="mt-4 mb-2 sm:mb-4">
-                      <Link
-                        to="/signup"
+                      <button
+                        onClick={handleSignupClick}
                         type="submit"
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                       >
                         Sign up
-                      </Link>
+                      </button>
                     </div>
                   </form>
                 </div>

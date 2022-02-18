@@ -78,7 +78,7 @@ const FilterForm = ({ addFilterCriteria }) => {
             </div>
           </div>
           <div className="flex justify-center pt-4">
-            <button className="z-50 mx-auto h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
+            <button className="z-40 mx-auto h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
             Filter{" "}
               <MagnifyingGlass
                 size={23}

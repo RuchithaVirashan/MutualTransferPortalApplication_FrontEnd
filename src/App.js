@@ -60,11 +60,13 @@ function App() {
   };
 
   const login = async (formData) => {
+    console.log("logging in");
+    console.log(formData);
     //username needs to be exposed because the effect uses it to talk to backend
     setUsername(formData.username);
     const token = await Api.login(formData);
     //once token is changed, effect is triggered that sets currUser
-    // console.log(token);
+    console.log(token);
     setToken(token);
   };
 

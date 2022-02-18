@@ -48,9 +48,9 @@ const Post = () => {
     {currUser.username ? (
     <div className="bg-gray-100">
       <Header 
-        // designation={postss.designation} 
-        // category="Post" 
-        // description={postss.designation} 
+        title="Transfer Request"
+        category="Post" 
+        description={postss.username} 
         />
 
     <div className="relative pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 md:pt-10 lg:pb-20">
