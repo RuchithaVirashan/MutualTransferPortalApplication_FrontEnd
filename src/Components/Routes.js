@@ -8,6 +8,7 @@ import Post from "./Posts/Post";
 import Posts from "./Posts/Posts";
 import ProtectedRoute from "./Auth/ProtectedRoute";
 import MissingPage from "./MissingPage";
+import RequestError from "./RequestError";
 
 const Routes = () => {
   return (
@@ -32,6 +33,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/missing">
         <MissingPage />
+      </Route>
+      <Route exact path="/request-error">
+        <RequestError />
       </Route>
       <Redirect to="/" />
     </Switch>

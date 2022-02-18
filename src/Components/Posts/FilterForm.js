@@ -1,3 +1,4 @@
+import { MagnifyingGlass } from "phosphor-react";
 import React, { useState } from "react";
 
 const FilterForm = ({ addFilterCriteria }) => {
@@ -78,7 +79,11 @@ const FilterForm = ({ addFilterCriteria }) => {
           </div>
           <div className="flex justify-center pt-4">
             <button className="z-50 mx-auto h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
-              Filter
+            Filter{" "}
+              <MagnifyingGlass
+                size={23}
+                className="inline-flex items-baseline"
+              />
             </button>
           </div>
         </form>

@@ -23,15 +23,19 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-        try {
-      login(formData);
-      setFormData(initialState);
-      setTimeout(() => {
-        history.push("/home");
-      }, 1000);
-    } catch (e) {
-      console.log("OOOOPS");
-    }
+    const tryToLogin = async (formData) => {
+      try {
+        await login(formData);
+        setFormData(initialState);
+        setTimeout(() => {
+          history.push("/home");
+        }, 1000);
+      } catch (e) {
+        history.push("/request-error");
+      }
+    };
+
+    tryToLogin(formData);
   };
 
   return (

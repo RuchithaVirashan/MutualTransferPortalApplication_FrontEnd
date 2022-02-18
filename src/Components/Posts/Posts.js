@@ -2,18 +2,19 @@ import React, { useContext, useEffect, useState } from 'react';
 import PostCard from './PostCard';
 import Header from '../Header';
 import CircleSVG from './CircleSVG';
-import { data } from 'autoprefixer';
 import FilterForm from './FilterForm';
 import { v4 as uuid } from 'uuid';
 import Api from '../../Api';
 import AuthContext from '../Auth/authContext';
 import ProtectedRoute from '../Auth/ProtectedRoute';
+import { useHistory } from 'react-router-dom';
 
 const Posts = () => {
 
     const[posts, getPosts]=useState([]);
     const [filterCriteria, setFilterCriteria] = useState({});
     const { currUser } = useContext(AuthContext);
+    const history = useHistory();
     // console.log("rendering posts page, ", currUser);
 
 //     //Retreve Post
@@ -25,18 +26,14 @@ const Posts = () => {
     //effect to filter posts based on search criteria
     useEffect(()=> {
         const setposts = async (criteria) =>{
-            //remove empty strings from criteria, which would otherwise throw server error
-            // const cleanedCriteria = {};
-            // for (const property in criteria) {
-            //     if (criteria[property] != "") {
-            //     cleanedCriteria[property] = criteria[property];
-            //     }
-            // }
-        //   const res = await getAllPost(cleanedCriteria);
+            try {
             const res = await Api.setposts(criteria);
             // console.log(res);
             // console.log(typeof(res));
             getPosts(res);
+        } catch (e) {
+            history.push("/request-error");
+          }
         };
     
         setposts(filterCriteria);

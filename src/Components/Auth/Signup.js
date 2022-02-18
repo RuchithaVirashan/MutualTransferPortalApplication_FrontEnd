@@ -29,25 +29,51 @@ const Signup = () => {
     }));
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     register(formData);
+  //     setFormData(initialState);
+  //     setSubmitting(true);
+
+  //     setTimeout(() => {
+  //       setSubmitting(false);
+  //       setDisplaySuccess(true);
+  //     }, 2000);
+
+  //     setTimeout(() => {
+  //       history.push("/login");
+  //     }, 6000);
+  //   } catch (e) {
+  //     console.log("CAUGHT ERROR", e);
+  //   }
+  //   //setHasSubmitted(true);
+  // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      register(formData);
-      setFormData(initialState);
-      setSubmitting(true);
 
-      setTimeout(() => {
-        setSubmitting(false);
-        setDisplaySuccess(true);
-      }, 2000);
+    const tryToRegister = async (formData) => {
+      try {
+        await register(formData);
+        setFormData(initialState);
+        setSubmitting(true);
 
-      setTimeout(() => {
-        history.push("/login");
-      }, 6000);
-    } catch (e) {
-      console.log("CAUGHT ERROR", e);
-    }
-    //setHasSubmitted(true);
+        setTimeout(() => {
+          setSubmitting(false);
+          setDisplaySuccess(true);
+        }, 2000);
+
+        setTimeout(() => {
+          history.push("/login");
+        }, 6000);
+      } catch (e) {
+        console.log("CAUGHT ERROR", e);
+        history.push("/request-error");
+      }
+    };
+
+    tryToRegister(formData);
   };
 
   return (

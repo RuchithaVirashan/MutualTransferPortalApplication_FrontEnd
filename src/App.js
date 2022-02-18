@@ -46,7 +46,7 @@ function App() {
           // console.log(user.username);
           // console.log("new user gettin called",currUser);
           window.localStorage.setItem("currUser", JSON.stringify(user));
-          console.log("is APP's USE EFFECT gettin called?");
+          // console.log("is APP's USE EFFECT gettin called?");
     };
     // console.log("is this gettin called?");
     getUser();
@@ -55,7 +55,7 @@ function App() {
 
   const register = async (formData) => {
     const res = await Api.register(formData);
-    console.log(res);
+    // console.log(res);
     setToken(res);
   };
 
@@ -64,7 +64,7 @@ function App() {
     setUsername(formData.username);
     const token = await Api.login(formData);
     //once token is changed, effect is triggered that sets currUser
-    console.log(token);
+    // console.log(token);
     setToken(token);
   };
 

@@ -1,3 +1,4 @@
+import { SignIn } from "phosphor-react";
 import React from "react";
 
 const LoginButton = (smallScreen) => {
@@ -11,7 +12,8 @@ const LoginButton = (smallScreen) => {
         aria-label="Login"
         title="Login"
       >
-        Login
+        Login 
+        <SignIn size={23} />
       </a>
     </li>
   );

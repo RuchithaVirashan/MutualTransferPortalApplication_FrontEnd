@@ -1,5 +1,5 @@
+import { UserPlus } from "phosphor-react";
 import React, { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
 import AuthContext from "./Auth/authContext";
 import LoginButton from "./Auth/LoginButton";
 import LogoutButton from "./Auth/LogoutButton";
@@ -14,7 +14,7 @@ const Navbar = () => {
     <div className="bg-gray-900 Navbar">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
-        <NavLink
+        <a
           exact
           to="/"
           aria-label="Home"
@@ -26,39 +26,39 @@ const Navbar = () => {
           <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
             Mutual_Transfer_portal
           </span>
-        </NavLink>
+        </a>
         <ul class="flex items-center hidden space-x-8 lg:flex">
           <li>
-          <NavLink
+          <a
               to="/posts"
               aria-label="Find transfer"
               title="Find transfer"
               className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Find transfer
-            </NavLink>
+            </a>
           </li>
           {currUser.username && (
               <>
                 <li>
-                  <NavLink
+                  <a
                     to="/missing"
                     aria-label="Post Now"
                     title="Post Now"
                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
                   >
                     Post Now
-                  </NavLink>
+                  </a>
                 </li>
                 <li>
-                  <NavLink
+                  <a
                     to="/profile"
                     aria-label="Profile"
                     title="Profile"
                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
                   >
                     Profile
-                  </NavLink>
+                  </a>
                 </li>
               </>
             )}
@@ -71,7 +71,8 @@ const Navbar = () => {
                   aria-label="Sign up"
                   title="Sign up"
                 >
-                  Sign up
+                  Sign up 
+                  <UserPlus size={23} />
                 </a>
               </li>
             )}
@@ -103,7 +104,7 @@ const Navbar = () => {
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <NavLink
+                    <a
                       to="/posts"
                       aria-label="Find transfer"
                       title="Find transfer"
@@ -113,7 +114,7 @@ const Navbar = () => {
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                         Find transfer
                       </span>
-                    </NavLink>
+                    </a>
                   </div>
                   <div>
                     <button
@@ -134,34 +135,34 @@ const Navbar = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                    <NavLink
+                    <a
                         to="/missing"
                         aria-label="Post Now"
                         title="Post Now"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Post Now
-                      </NavLink>
+                      </a>
                     </li>
                     <li>
-                      <NavLink
+                      <a
                         to="/posts"
                         aria-label="Find transfer"
                         title="Find transfer"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Find transfer
-                      </NavLink>
+                      </a>
                     </li>
                     <li>
-                      <NavLink
+                      <a
                         to="/profile"
                         aria-label="Profile"
                         title="Profile"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Profile
-                      </NavLink>
+                      </a>
                     </li>
                     {currUser.username ? (
                         <LogoutButton smallScreen />
@@ -170,14 +171,15 @@ const Navbar = () => {
                       )}
                       {currUser.username ? null : (
                         <li>
-                          <NavLink
+                          <a
                             href="/signup"
                             className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                             aria-label="Sign up"
                             title="Sign up"
                           >
-                            Sign up
-                          </NavLink>
+                            Sign up 
+                            <UserPlus size={23} />
+                          </a>
                         </li>
                       )}
                   </ul>
@@ -190,20 +192,7 @@ const Navbar = () => {
     </div>
   </div>
 
-  /*     <ul classNameName="font-mono">
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="/posts">Find Transfer</NavLink>
-      </li>
-      <li>
-        <NavLink to="/missing">Post Now</NavLink>
-      </li>
-      <li>
-        <NavLink to="/profile">Profile</NavLink>
-      </li>
-    </ul> */
+  
   );
 };
 
