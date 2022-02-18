@@ -69,7 +69,6 @@ const Posts = () => {
             description="Browse through all listed posts below. See something you like?"
             />
         <div className="relative px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-0 lg:pb-20">
-            {/* <CircleSVG /> */}
             <FilterForm addFilterCriteria={addFilterCriteria} />
             {isLoading && (
               <div className="font-xl font-mono text-center">

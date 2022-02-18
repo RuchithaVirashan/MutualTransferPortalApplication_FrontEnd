@@ -2,9 +2,13 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Api from "../../Api";
 import AuthContext from "../Auth/authContext";
+import Spinner from "../FormComponents/Spinner";
+import SuccessAlert from "../FormComponents/SuccessAlert";
 
 const UserDetailsForm = () => {
   const { currUser } = useContext(AuthContext);
+  const [submitting, setSubmitting] = useState(false);
+  const [displaySuccess, setDisplaySuccess] = useState(false);
   const [formData, setFormData] = useState();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -99,6 +103,10 @@ const UserDetailsForm = () => {
           Accept Changes
         </button>
       </div>
+      {submitting && <Spinner />}
+      {displaySuccess && (
+        <SuccessAlert msg="User information has been successfully updated. Rejoice!" />
+      )}
     </form>
   );
 };

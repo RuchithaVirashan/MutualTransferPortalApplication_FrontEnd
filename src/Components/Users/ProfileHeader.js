@@ -15,10 +15,6 @@ const ProfileHeader = () => {
         You have successfully logged in {currUser.username} {""}
         <Checks className="inline-block" size={24} />
       </p>
-      {/* <img
-        className="rounded object-cover py-10 "
-        src="https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-      ></img> */}
     </div>
   );
 };

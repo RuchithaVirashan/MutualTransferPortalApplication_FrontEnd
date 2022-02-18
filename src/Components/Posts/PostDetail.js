@@ -10,7 +10,7 @@ const PostDetail = ({ username, NIC, email, phone, designation, perferedCity, pe
         Post Details
       </h2>
       <div className="grid grid-cols-1 gap-10">
-        <div className="text-sm md:w-8/12 lg:w-4/12 mx-auto flex flex-col justify-center bg-white rounded bg-opacity-50 p-5 rounded shadow-xl">
+        <div className="text-sm md:w-8/12 lg:w-8/12 mx-auto flex flex-col justify-center bg-white rounded bg-opacity-50 p-5 rounded shadow-xl">
           {" "}
           <h3 className="opacity-100 mb-3">
             <span className="text-lg font-mono font-bold">{designation}</span>{" "}

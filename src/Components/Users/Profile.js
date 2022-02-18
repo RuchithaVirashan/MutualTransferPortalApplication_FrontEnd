@@ -4,6 +4,7 @@ import ProtectedRoute from "../Auth/ProtectedRoute";
 import ProfileHeader from "./ProfileHeader";
 import UserDetailsForm from "./UserDetailsForm";
 import "./Profile.css";
+import UserDetail from "./UserDetail";
 
 const Profile = () => {
   const { currUser } = useContext(AuthContext);
@@ -16,7 +17,12 @@ const Profile = () => {
             <ProfileHeader />
             <div className="px-10 py-10">
               <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
-                <UserDetailsForm />
+                <UserDetail />
+                <button
+                  className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                  >
+                  Edit
+                </button>
               </div>
             </div>
           </div>
