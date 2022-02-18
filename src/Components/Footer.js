@@ -6,6 +6,7 @@ import {
   LinkedinLogo,
 } from "phosphor-react";
 import LogoSVG from "./LogoSVG";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (

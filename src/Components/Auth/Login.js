@@ -26,7 +26,9 @@ const Login = () => {
         try {
       login(formData);
       setFormData(initialState);
-      history.push("/home");
+      setTimeout(() => {
+        history.push("/home");
+      }, 1000);
     } catch (e) {
       console.log("OOOOPS");
     }
@@ -84,7 +86,7 @@ const Login = () => {
                         Username
                       </label>
                       <input
-                        placeholder="John"
+                        placeholder="AryaSt"
                         required
                         type="text"
                         className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"

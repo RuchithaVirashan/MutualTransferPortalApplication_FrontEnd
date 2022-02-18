@@ -1,0 +1,7 @@
+.Navbar a.active {
+    text-decoration: underline;
+  }
+  
+  .Navbar a.active.brand {
+    text-decoration: none;
+  }

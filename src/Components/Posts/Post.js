@@ -36,7 +36,6 @@ const Post = () => {
       setPost(res);
       console.log(res);
     } catch (e) {
-      console.log("CAUGHT AN ERROR");
       history.push("/missing");
     }
     };

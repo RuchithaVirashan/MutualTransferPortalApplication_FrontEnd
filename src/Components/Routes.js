@@ -6,9 +6,8 @@ import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
 import Post from "./Posts/Post";
 import Posts from "./Posts/Posts";
-import Logout from "./Auth/Logout";
 import ProtectedRoute from "./Auth/ProtectedRoute";
-import MissingPage from "../MissingPage";
+import MissingPage from "./MissingPage";
 
 const Routes = () => {
   return (
@@ -30,9 +29,6 @@ const Routes = () => {
       </Route>
       <Route exact path="/Posts/:id">
         <Post />
-      </Route>
-      <Route exact path="/logout">
-        <Logout />
       </Route>
       <Route exact path="/missing">
         <MissingPage />

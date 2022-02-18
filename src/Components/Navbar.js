@@ -1,19 +1,21 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import AuthContext from "./Auth/authContext";
 import LoginButton from "./Auth/LoginButton";
 import LogoutButton from "./Auth/LogoutButton";
 import LogoSVG from "./LogoSVG";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { currUser } = useContext(AuthContext);
 
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 Navbar">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
-        <Link
+        <NavLink
+          exact
           to="/"
           aria-label="Home"
           title="Home"
@@ -24,39 +26,39 @@ const Navbar = () => {
           <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
             Mutual_Transfer_portal
           </span>
-        </Link>
+        </NavLink>
         <ul class="flex items-center hidden space-x-8 lg:flex">
           <li>
-          <Link
+          <NavLink
               to="/posts"
               aria-label="Find transfer"
               title="Find transfer"
-              className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+              className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Find transfer
-            </Link>
+            </NavLink>
           </li>
           {currUser.username && (
               <>
                 <li>
-                  <Link
+                  <NavLink
                     to="/missing"
                     aria-label="Post Now"
                     title="Post Now"
-                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
                   >
                     Post Now
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to="/profile"
                     aria-label="Profile"
                     title="Profile"
-                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
                   >
                     Profile
-                  </Link>
+                  </NavLink>
                 </li>
               </>
             )}
@@ -101,7 +103,7 @@ const Navbar = () => {
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <Link
+                    <NavLink
                       to="/posts"
                       aria-label="Find transfer"
                       title="Find transfer"
@@ -111,7 +113,7 @@ const Navbar = () => {
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                         Find transfer
                       </span>
-                    </Link>
+                    </NavLink>
                   </div>
                   <div>
                     <button
@@ -132,34 +134,34 @@ const Navbar = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                    <Link
+                    <NavLink
                         to="/missing"
                         aria-label="Post Now"
                         title="Post Now"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Post Now
-                      </Link>
+                      </NavLink>
                     </li>
                     <li>
-                      <Link
+                      <NavLink
                         to="/posts"
                         aria-label="Find transfer"
                         title="Find transfer"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Find transfer
-                      </Link>
+                      </NavLink>
                     </li>
                     <li>
-                      <Link
+                      <NavLink
                         to="/profile"
                         aria-label="Profile"
                         title="Profile"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Profile
-                      </Link>
+                      </NavLink>
                     </li>
                     {currUser.username ? (
                         <LogoutButton smallScreen />
@@ -168,14 +170,14 @@ const Navbar = () => {
                       )}
                       {currUser.username ? null : (
                         <li>
-                          <a
+                          <NavLink
                             href="/signup"
                             className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                             aria-label="Sign up"
                             title="Sign up"
                           >
                             Sign up
-                          </a>
+                          </NavLink>
                         </li>
                       )}
                   </ul>
@@ -190,16 +192,16 @@ const Navbar = () => {
 
   /*     <ul classNameName="font-mono">
       <li>
-        <Link to="/">Home</Link>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <Link to="/companies">Companies</Link>
+        <NavLink to="/posts">Find Transfer</NavLink>
       </li>
       <li>
-        <Link to="/jobs">Jobs</Link>
+        <NavLink to="/missing">Post Now</NavLink>
       </li>
       <li>
-        <Link to="/profile">Profile</Link>
+        <NavLink to="/profile">Profile</NavLink>
       </li>
     </ul> */
   );

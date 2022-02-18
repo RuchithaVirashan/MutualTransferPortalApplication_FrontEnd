@@ -13,10 +13,12 @@ import {
   faCoffee,
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom";
 
 library.add(fab, faSpinner, faCheckSquare, faCoffee);
 
 function App() {
+  const history = useHistory();
   //looks for user in localStorage, if not found, user is empty obj
   const [currUser, setCurrUser] = useState(() => {
     const user = window.localStorage.getItem("currUser");
