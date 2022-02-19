@@ -9,6 +9,7 @@ import Posts from "./Posts/Posts";
 import ProtectedRoute from "./Auth/ProtectedRoute";
 import MissingPage from "./MissingPage";
 import RequestError from "./RequestError";
+import PostNow from "./Posts/PostNow";
 
 const Routes = () => {
   return (
@@ -30,6 +31,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/Posts/:id">
         <Post />
+      </Route>
+      <Route exact path="/postnow">
+        <PostNow />
       </Route>
       <Route exact path="/missing">
         <MissingPage />

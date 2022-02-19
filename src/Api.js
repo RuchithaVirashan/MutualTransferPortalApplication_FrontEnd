@@ -64,11 +64,11 @@ class Api {
       return res;
     }
   
-    // static async addpost( data) {
-    //   console.log("API CLASS IS NOW GONNA SEND REQUEST");
-    //   let res = await this.request(`post`, data, "put");
-    //   return res;
-    // }
+    static async addpost( data) {
+      // console.log("API CLASS IS NOW GONNA SEND REQUEST");
+      let res = await this.request(`post`, data, "post");
+      return res;
+    }
 }
 
 // for now, token ("testuser" / "password")

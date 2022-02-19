@@ -209,7 +209,7 @@ const Signup = () => {
                   <div className="text-center">
                     <SuccessAlert
                       spinner
-                      msg="Rejoice! You're about to be redirected to the login page."
+                      msg="You're about to be redirected to the login page."
                     />
                   </div>
                 </>

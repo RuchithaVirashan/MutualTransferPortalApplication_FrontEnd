@@ -43,7 +43,7 @@ const Navbar = () => {
               <>
                 <li>
                   <NavLink
-                    to="/missing"
+                    to="/postnow"
                     aria-label="Post Now"
                     title="Post Now"
                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -137,7 +137,7 @@ const Navbar = () => {
                   <ul className="space-y-4">
                     <li>
                     <NavLink
-                        to="/missing"
+                        to="/postnow"
                         aria-label="Post Now"
                         title="Post Now"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
