@@ -46,6 +46,8 @@ function App() {
           // console.log(user.username);
           // console.log("new user gettin called",currUser);
           window.localStorage.setItem("currUser", JSON.stringify(user));
+          window.localStorage.setItem("authority", user.authorities[0].authority);
+          // console.log(user.authorities[0].authority);
           // console.log("is APP's USE EFFECT gettin called?");
     };
     // console.log("is this gettin called?");

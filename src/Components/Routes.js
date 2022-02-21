@@ -10,12 +10,16 @@ import ProtectedRoute from "./Auth/ProtectedRoute";
 import MissingPage from "./MissingPage";
 import RequestError from "./RequestError";
 import PostNow from "./Posts/PostNow";
+import AdminHome from "./AdminHome";
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/">
         <Home />
+      </Route>
+      <Route exact path="/adminhome">
+        <AdminHome />
       </Route>
       <Route exact path="/profile">
         <Profile />

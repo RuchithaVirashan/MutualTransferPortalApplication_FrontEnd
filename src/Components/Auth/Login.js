@@ -40,7 +40,14 @@ const Login = () => {
         setFormData(initialState);
         setIsLoading(false);
         setTimeout(() => {
-          history.push("/home");
+          const auth=window.localStorage.getItem('authority');
+          // console.log(auth);
+          if (auth === 'ADMIN' ) {
+            // console.log('admin');
+            return history.push("/adminhome");
+          } else {
+            return history.push("/home");
+          }
         }, 1000);
       } catch (e) {
         setErrorMsgs(e);

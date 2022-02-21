@@ -51,18 +51,18 @@ class Api {
 
     static async getUser(username) {
       //console.log("I've been told to get a user");
-      let res = await this.request(`user/${username}`);
+      let res = await this.request(`current-user`);
       //console.log("this is the result: ",res);
       return res;
     }
 
-    //get current user
+    // //get current user
 
-    static async getCurrUser(){
-      let res = await this.request(`current-user`);
-      console.log("this is the result: ",res);
-      return res;
-    }
+    // static async getCurrUser(){
+    //   let res = await this.request(`current-user`);
+    //   console.log("this is the result: ",res);
+    //   return res;
+    // }
   
     static async addpost( data) {
       // console.log("API CLASS IS NOW GONNA SEND REQUEST");
