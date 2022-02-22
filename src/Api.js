@@ -69,6 +69,13 @@ class Api {
       let res = await this.request(`post`, data, "post");
       return res;
     }
+
+    /* delete on one post by id */
+  static async deletepost(id, data) {
+    console.log("API CLASS IS NOW GONNA SEND REQUEST");
+    let res = await this.request(`post/${id}`, data, "delete");
+    return res;
+  }
 }
 
 // for now, token ("testuser" / "password")

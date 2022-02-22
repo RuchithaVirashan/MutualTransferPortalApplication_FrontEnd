@@ -11,6 +11,7 @@ import MissingPage from "./MissingPage";
 import RequestError from "./RequestError";
 import PostNow from "./Posts/PostNow";
 import AdminHome from "./AdminHome";
+import AdminPosts from "./Posts/AdminPosts";
 
 const Routes = () => {
   return (
@@ -20,6 +21,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/adminhome">
         <AdminHome />
+      </Route>
+      <Route exact path="/adminpost">
+        <AdminPosts />
       </Route>
       <Route exact path="/profile">
         <Profile />

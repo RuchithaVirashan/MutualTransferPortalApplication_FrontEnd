@@ -1,3 +1,4 @@
+import { SignOut } from "phosphor-react";
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "./authContext";
@@ -24,6 +25,7 @@ const LogoutButton = (smallScreen) => {
         onClick={handleLogout}
       >
         Logout
+        <SignOut size={23} />
       </a>
     </li>
   );
