@@ -72,8 +72,21 @@ class Api {
 
     /* delete on one post by id */
   static async deletepost(id, data) {
-    console.log("API CLASS IS NOW GONNA SEND REQUEST");
+    // console.log("API CLASS IS NOW GONNA SEND REQUEST");
     let res = await this.request(`post/${id}`, data, "delete");
+    return res;
+  }
+
+  /* get a list of all users */
+  static async getusers(data) {
+    let res = await this.request(`user`, data);
+    return res;
+  }
+
+  /* delete on one user by id */
+  static async deleteuser(id, data) {
+    // console.log("API CLASS IS NOW GONNA SEND REQUEST");
+    let res = await this.request(`user/${id}`, data, "delete");
     return res;
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import {  useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const PostCard = ({post}) => {
   const history = useHistory();

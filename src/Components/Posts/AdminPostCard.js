@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Redirect, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import React from 'react';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import Api from '../../Api';
 import DeleteButton from './DeleteButton';
 

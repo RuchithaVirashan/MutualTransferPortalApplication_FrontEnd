@@ -1,7 +1,6 @@
 import { Checks } from "phosphor-react";
 import React, { useContext } from "react";
 import AuthContext from "../Auth/authContext";
-import HeaderSVG from "../HeaderSVG";
 
 const ProfileHeader = () => {
   const { currUser } = useContext(AuthContext);

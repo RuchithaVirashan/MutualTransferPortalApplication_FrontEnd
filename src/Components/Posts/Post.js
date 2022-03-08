@@ -1,4 +1,4 @@
-import { ArrowSquareDown, Article, Chats, Envelope, IdentificationCard, MapPin, MapPinLine, Phone, Student, User } from "phosphor-react";
+import { ArrowSquareDown, Chats } from "phosphor-react";
 import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -6,7 +6,6 @@ import Api from "../../Api";
 import AuthContext from "../Auth/authContext";
 import ProtectedRoute from "../Auth/ProtectedRoute";
 import Header from "../Header";
-import PostCard from "./PostCard";
 import PostDetail from "./PostDetail";
 
 const Post = () => {

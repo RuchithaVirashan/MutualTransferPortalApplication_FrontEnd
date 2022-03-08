@@ -11,7 +11,7 @@ const AdminHome = () => {
       history.push(`/adminpost`);
     };
     const handleClick2 = () => {
-      history.push(`/missing`);
+      history.push(`/adminuser`);
     };
     return (
       <>
@@ -35,7 +35,7 @@ const AdminHome = () => {
             className="cursor-pointer flex flex-col justify-between overflow-hidden text-center transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl"
           >
             <div className="p-5">
-              <p className="mb-2 font-bold font-mono">fchhchf</p>
+              <p className="mb-2 font-bold font-mono">View All Users</p>
             </div>
             <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-red-accent-400 group-hover:scale-x-100" />
           </div>

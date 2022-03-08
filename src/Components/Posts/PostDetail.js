@@ -1,6 +1,5 @@
 import React from "react";
 import "./PostDetail.css";
-import AuthContext from "../Auth/authContext";
 import { Article, Envelope, IdentificationCard, MapPin, MapPinLine, Phone, Student, User } from "phosphor-react";
 
 const PostDetail = ({ username, NIC, email, phone, designation, perferedCity, perferedDistrict, currentWorkingCity, currentWorkingDistrict, currentWorkingPlace, description  }) => {

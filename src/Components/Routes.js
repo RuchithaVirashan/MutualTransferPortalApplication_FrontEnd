@@ -12,6 +12,7 @@ import RequestError from "./RequestError";
 import PostNow from "./Posts/PostNow";
 import AdminHome from "./AdminHome";
 import AdminPosts from "./Posts/AdminPosts";
+import AdminUsers from "./Users/AdminUsers";
 
 const Routes = () => {
   return (
@@ -24,6 +25,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/adminpost">
         <AdminPosts />
+      </Route>
+      <Route exact path="/adminuser">
+        <AdminUsers />
       </Route>
       <Route exact path="/profile">
         <Profile />
