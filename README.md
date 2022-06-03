@@ -73,4 +73,6 @@ Your app is ready to be deployed!
 ![login](./public/README_imgs/login.png)
 #### Homepage
 ![homepage](./public/README_imgs/homepage.png)
+#### Postspage
+![postspage](./public/README_imgs/posts.png)
 
