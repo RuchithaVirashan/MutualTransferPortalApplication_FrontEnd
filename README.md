@@ -1,10 +1,10 @@
-# MUTUAL TRANSFER PORTAL FRONTEND 💼
+# MUTUAL TRANSFER PORTAL FRONTEND :briefcase: 
 
 This is a React frontend for a fake mutual transfer application website to go along with [this](https://github.com/RuchithaVirashan/MutualTransferPortalApplication_BackEnd) backend.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Technologies 
+## Technologies :man_scientist:
 
 1. JavaScript
 2. React, Create React App
@@ -20,7 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 3. Viewing profile information
 4. Dislaying list of posted trnsfers and ditails
 
-## Approach :woman_student:
+## Approach :man_student:
 
 1. Created reusable components representing Posts, Users, Forms, etc
 2. Implemented routing via react-router-dom switch component
