@@ -23,7 +23,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Approach :man_student:
 
 1. Created reusable components representing Posts, Users, Forms, etc
-2. Login as an admin or normal user
+2. Can be logged as an admin or normal user
 3. Implemented routing via react-router-dom switch component
 4. Authentication via JWTs, localStorage used to enable user to persist between refreshes and browser closing/opening
 5. Included error handling and pages: for unauthorised access, for missing page & wrong URL
