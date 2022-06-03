@@ -23,9 +23,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Approach :man_student:
 
 1. Created reusable components representing Posts, Users, Forms, etc
-2. Implemented routing via react-router-dom switch component
-3. Authentication via JWTs, localStorage used to enable user to persist between refreshes and browser closing/opening
-4. Included error handling and pages: for unauthorised access, for missing page & wrong URL
+2. Login as an admin or normal user
+3. Implemented routing via react-router-dom switch component
+4. Authentication via JWTs, localStorage used to enable user to persist between refreshes and browser closing/opening
+5. Included error handling and pages: for unauthorised access, for missing page & wrong URL
 
 ## For developers: 
 
@@ -39,7 +40,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-Backend ([repo](https://github.com/RuchithaVirashan/MutualTransferPortalApplication_BackEnd) can be run on port 8080. 
+Backend ([repo](https://github.com/RuchithaVirashan/MutualTransferPortalApplication_BackEnd)) can be run on port 8080. 
 
 ##### To run tests: 
 
