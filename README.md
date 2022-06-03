@@ -60,10 +60,17 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Design Resources 
 
-### `npm run build` fails to minify
+* [TailwindCSS](https://tailwindcss.com/)
+* [Phosphor Icons](https://phosphoricons.com/)
+* [Fontawesome Icons](https://fontawesome.com/)
+* [Registration Form](https://tailwindcomponents.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screengrabs
+#### Login Page
+![login](./public/README_imgs/login.png)
+#### Homepage
+![homepage](./public/README_imgs/homepage.png)
+
