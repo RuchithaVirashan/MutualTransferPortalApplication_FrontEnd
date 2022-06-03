@@ -70,7 +70,7 @@ Your app is ready to be deployed!
 
 ## Screengrabs
 #### Login Page
-![login](./public/README_imgs/login.png)
+<img src="https://github.com/RuchithaVirashan/MutualTransferPortalApplication_FrontEnd/blob/main/public/README_imgs/login.png?raw=true" alt="drawing" style="width:50%">
 #### Homepage
 ![homepage](./public/README_imgs/homepage.png)
 #### Postspage
